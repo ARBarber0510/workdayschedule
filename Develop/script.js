@@ -2,74 +2,47 @@ $(document).ready(function() {
 
     $("#currentDay").text(moment().format("dddd MMMM Do"));
 
-    
-    $(".time-block").each(function() {
-        console.log($(this).children())
-    });
+    $(".saveBtn").on("click", function() {
+        console.log(this);
+        var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
 
+        localStorage.setItem(time, text);
+    })
 
-    // var $text9AM = $("#hour-9");
-    // var $text10AM = $("#hour-10");
-    // var $text11AM = $("#hour-11");
-    // var $text12PM = $("#hour-12");
-    // var $text1PM = $("#hour-13");
-    // var $text2PM = $("#hour-14");
-    // var $text3PM = $("#hour-15");
-    // var $text4PM = $("#hour-16");
-    // var $text5PM = $("#hour-17");
-
-    // // SaveBtn listener for user input assigned.
-    // $(".saveBtn").on("click", function() {
-    //     console.log(this);
-
-    //     localStorage.setItem("9AM", ($text9AM.val()))
-    //     localStorage.setItem("10AM", ($text10AM.val()))
-    //     localStorage.setItem("11AM", ($text11AM.val()))
-    //     localStorage.setItem("12PM", ($text12PM.val()))
-    //     localStorage.setItem("1PM", ($text1PM.val()))
-    //     localStorage.setItem("2PM", ($text2PM.val()))
-    //     localStorage.setItem("3PM", ($text3PM.val()))
-    //     localStorage.setItem("4PM", ($text4PM.val()))
-    //     localStorage.setItem("5PM", ($text5PM.val()))
-
-    //     $("#text9AM").append(localStorage.getItem("9AM"));
-    //     $("#text10AM").append(localStorage.getItem("10AM"));
-    //     $("#text11AM").append(localStorage.getItem("11AM"));
-    //     $("#text12PM").append(localStorage.getItem("12PM"));
-    //     $("#text1PM").append(localStorage.getItem("1PM"));
-    //     $("#text2PM").append(localStorage.getItem("2PM"));
-    //     $("#text3PM").append(localStorage.getItem("3PM"));
-    //     $("#text4PM").append(localStorage.getItem("4PM"));
-    //     $("#text5PM").append(localStorage.getItem("5PM"));
-    // })
+    $("#hour-9").val(localStorage.getItem("9AM"));
+    $("#hour-10").val(localStorage.getItem("10AM"));
+    $("#hour-11").val(localStorage.getItem("11AM"));
+    $("#hour-12").val(localStorage.getItem("12PM"));
+    $("#hour-13").val(localStorage.getItem("1PM"));
+    $("#hour-14").val(localStorage.getItem("2PM"));
+    $("#hour-15").val(localStorage.getItem("3PM"));
+    $("#hour-16").val(localStorage.getItem("4PM"));
+    $("#hour-17").val(localStorage.getItem("5PM"));
 
     function hourTracker() {
-        var presentHour = parseInt(moment().hour());
+        var presentHour = moment().hour('H');
 
         $(".time-block").each(function() {
+            // console.log($(this).children())
             var blockHour = parseInt($(this).attr("id").split("hour")[1]);
             console.log(blockHour, presentHour)
-
+    
             if (blockHour < presentHour) {
-                $(this).addClass("past");
-                $(this).removeClass("present");
-                $(this).removeClass("future");
+                $(this).addClass("past")
             }
             else if (blockHour === presentHour) {
-                $(this).removeClass("past");
-                $(this).addClass("present");
-                $(this).removeClass("future");
+                $(this).addClass("present")
             }
             else if (blockHour > presentHour) {
-                $(this).removeClass("past");
-                $(this).removeClass("present");
-                $(this).addClass("future");
+                $(this).addClass("future")
             }
+    
         })
     }
-    
-
     hourTracker();
+    
+    
 })
 
 // Need to color code time blocks based off time of day based off assigned classes.
