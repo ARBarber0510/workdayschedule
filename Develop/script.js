@@ -5,6 +5,34 @@ $(".time-block").each(function() {
     console.log($(this).children())
 })
 
+function hourTracker() {}
+    var presentHour = moment().hour();
+
+    $(".time-block").each(function() {
+        var blockHour = parseInt($(this).attr("id").split("hour")[1]);
+        console.log(blockHour, presentHour)
+
+        if (blockHour < presentHour) {
+            $(this).addClass("past");
+            $(this).removeClass("present");
+            $(this).removeClass("future");
+        }
+        else if (blockHour === presentHour) {
+            $(this).removeClass("past");
+            $(this).addClass("present");
+            $(this).removeClass("future");
+        }
+        else if (blockHour > presentHour) {
+            $(this).removeClass("past");
+            $(this).removeClass("present");
+            $(this).addClass("future");
+        }
+    })
+
+$(".saveBtn").on("click", function() {
+    console.log(this);
+})
+
 // Need to color code time blocks based off time of day based off assigned classes.
 // Present hour is highlighted in red.
 // Future hours are highlighted in green.
