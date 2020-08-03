@@ -5,7 +5,11 @@ $(".time-block").each(function() {
     console.log($(this).children())
 })
 
-function hourTracker() {}
+$(".saveBtn").on("click", function() {
+    console.log(this);
+})
+
+function hourTracker() {
     var presentHour = moment().hour();
 
     $(".time-block").each(function() {
@@ -28,10 +32,8 @@ function hourTracker() {}
             $(this).addClass("future");
         }
     })
+}
 
-$(".saveBtn").on("click", function() {
-    console.log(this);
-})
 
 // Need to color code time blocks based off time of day based off assigned classes.
 // Present hour is highlighted in red.
