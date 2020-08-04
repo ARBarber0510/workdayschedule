@@ -32,7 +32,7 @@ THEN the saved events persist
 
 The following screenshot reflects the application functionality:
 
-![day planner demo](BOOTCAMP\00-HW\workdayschedule\workdayschedule\Assets\workday-schedule-screenshot-1.PNG)
+![day planner demo](./Assets/workday-schedule-screenshot-1.PNG)
 
 ## Review
 
