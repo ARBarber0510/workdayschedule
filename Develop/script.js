@@ -26,9 +26,9 @@ $(document).ready(function() {
         // Console log returning presentHour not defined in console.
         var presentHour = moment().hours();
 
-        $(".time-block").each(function() {
+        $(".description").each(function() {
             // console.log($(this).children())
-            var blockHour = parseInt($(this).attr("id").split("hour")[1]);
+            var blockHour = parseInt($(this).attr("id").split("-")[1]);
             console.log(blockHour, presentHour)
     
             if (blockHour < presentHour) {
