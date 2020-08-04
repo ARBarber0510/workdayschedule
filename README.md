@@ -33,6 +33,5 @@ The following screenshots reflects the application functionality:
 ![day planner demo](./Assets/workday-schedule-screenshot-1.PNG)
 ![day planner demo](./Assets/workday-schedule-screenshot-2.PNG)
 
-## Review
 
 
