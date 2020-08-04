@@ -4,7 +4,7 @@ This site is a simple calendar application that allows the user to save their sc
 This app is run in the browser and uses dynamically updated HTML & CSS through the use of jQuery. 
 The calendar's date and time is powered by the [Moment.js] library. 
 
-## User Story
+## Deployed Applcation
 
 ```
 AS AN employee with a busy schedule
