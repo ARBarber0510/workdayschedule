@@ -30,9 +30,9 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
-The following animation demonstrates the application functionality:
+The following screenshot reflects the application functionality:
 
-![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+![day planner demo](BOOTCAMP\00-HW\workdayschedule\workdayschedule\Assets\workday-schedule-screenshot-1.PNG)
 
 ## Review
 
@@ -42,5 +42,3 @@ You are required to submit the following for review:
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
